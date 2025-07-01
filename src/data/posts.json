@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "learn-abt-eco",
+    "title": "LEARN ABT ECONOMICS",
+    "description": "this article includes every detail u need to know abt economics",
+    "image": "/finance1.png",
+    "tags": ["nextjs", "react","css"],
+    "date": "2025-06-15"
+  },
+  {
+    "slug": "learn-abt-finance",
+    "title": "LEARN ABT FINANCE",
+    "description": "this article includes every detail u need to know abt finance",
+    "image": "/finance5.webp",    
+    "tags": ["nextjs", "react","tailwind"],
+    "date": "2025-06-15"
+  },
+  {
+    "slug": "achievments",
+    "title": "About Mitansh Khurana",
+    "description": "FES Alumnus Mitansh Khurana Secures ₹1 Crore Deal on Shark Tank for Mental Wellness Startup",
+    "image": "/finance6.webp",   
+    "tags": ["tailwind", "css","nextjs"],
+    "date": "2025-06-20"
+  }
+]

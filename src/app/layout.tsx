@@ -1,4 +1,6 @@
+
 import type { Metadata } from "next";
+import type { ReactNode } from "react";       // ← bring ReactNode into scope
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -19,12 +21,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: ReactNode;
+}) {
   return (
     <html lang="en">
       <body
+        style={{
+          backgroundImage: "url('/finance2.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
