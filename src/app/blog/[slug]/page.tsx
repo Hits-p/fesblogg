@@ -3,11 +3,16 @@ import type { Post } from "@/type";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+// For static generation of all paths
 export async function generateStaticParams() {
   return (posts as Post[]).map((p) => ({ slug: p.slug }));
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPost({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = (posts as Post[]).find((p) => p.slug === params.slug);
   if (!post) return notFound();
 
@@ -23,10 +28,11 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       />
       <p className="text-zinc-600">{post.description}</p>
 
-      {/* Replace below with markdown rendering if you store full content */}
+      
       <p className="text-lg leading-7">
         (Write or import your full article content here…)
       </p>
     </article>
   );
 }
+
