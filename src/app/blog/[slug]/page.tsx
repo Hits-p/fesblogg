@@ -3,21 +3,19 @@ import type { Post } from "@/type";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-// Generate static params for all blog slugs
+// Generate static params
 export async function generateStaticParams() {
   return (posts as Post[]).map((post) => ({
     slug: post.slug,
   }));
 }
 
-// ✅ Corrected props typing — no Promise confusion
-interface BlogPageProps {
-  params: {
-    slug: string;
-  };
-}
 
-export default function BlogPost({ params }: BlogPageProps) {
+export default async function BlogPost({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = (posts as Post[]).find((p) => p.slug === params.slug);
   if (!post) return notFound();
 
@@ -32,6 +30,8 @@ export default function BlogPost({ params }: BlogPageProps) {
         className="rounded-xl"
       />
       <p className="text-zinc-600">{post.description}</p>
+
+      {/* Add your actual article content here */}
       <p className="text-lg leading-7">
         (Write or import your full article content here…)
       </p>
